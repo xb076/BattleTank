@@ -32,7 +32,10 @@ void ATankAIController::Tick(float DeltaTime)
 	if (PlayerTank)
 	{
 		auto Tank = GetControlledTank();
-		if (Tank) Tank->AimAt(PlayerTank->GetActorLocation());
+		if (Tank) {
+			Tank->AimAt(PlayerTank->GetActorLocation());
+			Tank->Fire();
+		}
 	}
 
 }
